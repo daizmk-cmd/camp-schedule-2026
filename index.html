@@ -1,1 +1,158 @@
-test content 123
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奥日立きらら の里キャンプ 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#141414;--bg2:#1f1f1f;--bg3:#2a2a2a;--surface:#242424;--border:rgba(255,255,255,.08);--text:#e5e5e5;--muted:#808080;--red:#e50914;--red2:#b81d24;--teal:#1db98d;--teal-d:rgba(29,185,141,.12);--blue:#4d9de0;--blue-d:rgba(77,157,224,.12);--amber:#f5a623;--amber-d:rgba(245,166,35,.12);--purple:#9b59b6;--purple-d:rgba(155,89,182,.12);--rose:#e74c6f;--rose-d:rgba(231,76,111,.12);--slate:#7f8c8d;--slate-d:rgba(127,140,141,.12);--night-d:rgba(30,50,80,.5)}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;font-weight:300;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.container{max-width:740px;margin:0 auto;padding:0 28px}
+.hero{position:relative;padding:72px 0 0;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;left:-100px;width:600px;height:500px;background:radial-gradient(ellipse,rgba(229,9,20,.18) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;top:0;right:-80px;width:400px;height:400px;background:radial-gradient(ellipse,rgba(29,185,141,.10) 0%,transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.n-mark{display:inline-block;width:3px;height:48px;background:var(--red);vertical-align:middle;margin-right:14px;border-radius:1px}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:18px}
+.hero-title{font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:clamp(32px,6vw,48px);line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:6px;white-space:nowrap}
+.hero-title .accent{color:var(--red)}
+.hero-meta{display:flex;align-items:center;gap:18px;margin:20px 0 40px;flex-wrap:wrap}
+.meta-badge{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em;padding:4px 10px;border-radius:3px;border:1px solid rgba(255,255,255,.2);color:var(--text)}
+.meta-badge.red{border-color:var(--red);color:var(--red)}
+.meta-sep{color:var(--muted);font-size:12px}
+.meta-text{font-size:13px;color:var(--muted)}
+.weather-strip{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:48px}
+.wx-panel{background:var(--bg2);padding:20px 22px;display:flex;align-items:center;gap:16px;transition:background .18s}
+.wx-panel:hover{background:var(--bg3)}
+.wx-emoji{font-size:32px;flex-shrink:0}
+.wx-day{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:5px}
+.wx-desc{font-size:15px;font-weight:500;color:#fff;margin-bottom:6px}
+.wx-stats{display:flex;gap:10px}
+.wx-hi{font-size:12px;color:var(--amber);font-weight:500}
+.wx-lo{font-size:12px;color:var(--muted)}
+.wx-rain{font-size:12px;color:var(--blue)}
+.shop-card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:6px;padding:16px 20px;margin-bottom:56px;display:flex;align-items:center;gap:16px;transition:background .18s}
+.shop-card:hover{background:var(--bg3)}
+.shop-icon{font-size:22px;width:40px;height:40px;background:var(--teal-d);border:1px solid rgba(29,185,141,.2);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.shop-info{flex:1;min-width:0}
+.shop-name{font-size:13px;font-weight:500;color:#fff;margin-bottom:3px}
+.shop-addr{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--muted);line-height:1.6}
+.shop-links{display:flex;flex-direction:column;gap:6px;align-items:flex-end;flex-shrink:0}
+.shop-link{display:inline-flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;padding:4px 10px;border-radius:3px;white-space:nowrap;transition:opacity .15s}
+.shop-link:hover{opacity:.75}
+.shop-link.map{background:rgba(66,133,244,.15);border:1px solid rgba(66,133,244,.3);color:#7ab3f5}
+.shop-open{font-family:'DM Mono',monospace;font-size:10px;color:var(--teal);background:var(--teal-d);border:1px solid rgba(29,185,141,.2);border-radius:3px;padding:4px 10px;white-space:nowrap}
+.day-section{margin-bottom:56px}
+.day-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.day-num{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:#fff;letter-spacing:.04em}
+.day-date{font-size:14px;color:var(--muted);letter-spacing:.02em}
+.day-rule{flex:1;height:1px;background:var(--border)}
+.day-wx{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.day-wx .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.timeline{display:flex;flex-direction:column}
+.tl-row{display:grid;grid-template-columns:76px 20px 1fr;gap:0 18px;opacity:0;transform:translateY(14px);animation:up .45s cubic-bezier(.22,.68,0,1.2) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.tl-row:nth-child(1){animation-delay:.03s}.tl-row:nth-child(2){animation-delay:.08s}.tl-row:nth-child(3){animation-delay:.13s}.tl-row:nth-child(4){animation-delay:.18s}.tl-row:nth-child(5){animation-delay:.23s}.tl-row:nth-child(6){animation-delay:.28s}.tl-row:nth-child(7){animation-delay:.33s}.tl-row:nth-child(8){animation-delay:.38s}.tl-row:nth-child(9){animation-delay:.43s}.tl-row:nth-child(10){animation-delay:.48s}
+.tl-time{text-align:right;padding-top:14px;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);line-height:1.5;letter-spacing:.04em}
+.tl-spine{display:flex;flex-direction:column;align-items:center}
+.tl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:15px;position:relative;z-index:1;transition:transform .18s,box-shadow .18s}
+.tl-row:hover .tl-dot{transform:scale(1.4);box-shadow:0 0 10px currentColor}
+.tl-line{flex:1;width:1px;background:var(--border);margin-top:4px}
+.tl-row:last-child .tl-line{display:none}
+.tl-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:13px 16px;margin-bottom:8px;transition:background .18s,border-color .18s,transform .18s;cursor:default}
+.tl-card:hover{background:var(--bg3);border-color:rgba(255,255,255,.14);transform:translateX(3px)}
+.ev-label{font-size:14px;font-weight:500;color:#fff;line-height:1.4}
+.ev-note{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.6}
+.ev-shop-name{font-size:12px;font-weight:500;margin-top:7px;margin-bottom:2px}
+.ev-shop-addr{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);line-height:1.7}
+.c-shop .tl-dot{background:var(--teal);color:var(--teal)}.c-shop .tl-card{border-left:2px solid var(--teal);background:var(--teal-d)}.c-shop .ev-shop-name{color:var(--teal)}
+.c-move .tl-dot{background:var(--blue);color:var(--blue)}.c-move .tl-card{border-left:2px solid var(--blue);background:var(--blue-d)}
+.c-cin .tl-dot{background:var(--red);color:var(--red);box-shadow:0 0 8px rgba(229,9,20,.4)}.c-cin .tl-card{border-left:2px solid var(--red);background:rgba(229,9,20,.08)}
+.c-setup .tl-dot{background:var(--amber);color:var(--amber)}.c-setup .tl-card{border-left:2px solid var(--amber);background:var(--amber-d)}
+.c-act .tl-dot{background:var(--purple);color:var(--purple)}.c-act .tl-card{border-left:2px solid var(--purple);background:var(--purple-d)}
+.c-bbq .tl-dot{background:var(--rose);color:var(--rose)}.c-bbq .tl-card{border-left:2px solid var(--rose);background:var(--rose-d)}
+.c-night .tl-dot{background:#c0d8f0;color:#c0d8f0}.c-night .tl-card{border-left:2px solid #c0d8f0;background:var(--night-d)}
+.c-morn .tl-dot{background:var(--amber);color:var(--amber)}.c-morn .tl-card{border-left:2px solid var(--amber);background:var(--amber-d)}
+.c-cout .tl-dot{background:var(--rose);color:var(--rose)}.c-cout .tl-card{border-left:2px solid var(--rose);background:var(--rose-d)}
+.c-ret .tl-dot{background:var(--slate);color:var(--slate)}.c-ret .tl-card{border-left:2px solid var(--slate);background:var(--slate-d)}
+.foot{border-top:1px solid var(--border);padding:28px 0 60px}
+.foot-grid{display:flex;flex-wrap:wrap;gap:8px}
+.foot-chip{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:5px 12px;transition:border-color .15s,color .15s}
+.foot-chip:hover{border-color:rgba(255,255,255,.2);color:var(--text)}
+.site-link{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:10.5px;color:var(--red);background:rgba(229,9,20,.08);border:1px solid rgba(229,9,20,.2);border-radius:3px;padding:5px 12px;transition:background .15s}
+.site-link:hover{background:rgba(229,9,20,.15)}
+.site-link svg{flex-shrink:0}
+@media(max-width:520px){.weather-strip{grid-template-columns:1fr}.hero-title{font-size:48px}.tl-row{grid-template-columns:62px 18px 1fr;gap:0 12px}.tl-time{font-size:9px}.shop-card{flex-wrap:wrap}.shop-links{flex-direction:row;align-items:center}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="container hero-inner">
+  <div class="hero-eyebrow">Camp Schedule · 2026</div>
+  <h1 class="hero-title"><span class="n-mark"></span>奥日立きらら<span class="accent">の里</span></h1>
+  <div class="hero-meta">
+    <span class="meta-badge red">1泊2日</span>
+    <span class="meta-badge">2026.03.21–22</span>
+    <span class="meta-sep">·</span>
+    <span class="meta-text">本川家（新浦安）＆ 井奥家（西荻窪）</span>
+  </div>
+  <div class="weather-strip">
+    <div class="wx-panel"><div class="wx-emoji">☀️</div><div><div class="wx-day">Day 1 · 3/21 Sat</div><div class="wx-desc">晴れ</div><div class="wx-stats"><span class="wx-hi">最高 16°C</span><span class="wx-lo">最低 5°C</span><span class="wx-rain">雨 0%</span></div></div></div>
+    <div class="wx-panel"><div class="wx-emoji">⛅</div><div><div class="wx-day">Day 2 · 3/22 Sun</div><div class="wx-desc">晴れのちくもり</div><div class="wx-stats"><span class="wx-hi">最高 15°C</span><span class="wx-lo">最低 5°C</span><span class="wx-rain">雨 20%</span></div></div></div>
+  </div>
+  <div class="shop-card">
+    <div class="shop-icon">🛒</div>
+    <div class="shop-info"><div class="shop-name">ヨークベニマル 日立大甕店</div><div class="shop-addr">茨城県日立市大甕町4丁目14番14号　TEL 0294-25-4921</div></div>
+    <div class="shop-links">
+      <div class="shop-open">9:30 OPEN</div>
+      <a class="shop-link map" href="https://www.google.com/maps/search/?api=1&query=ヨークベニマル+日立大甕店&query_place_id=ChIJ74yXqVSAIWARA-dC63-ypwc" target="_blank" rel="noopener"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Google Map</a>
+    </div>
+  </div>
+</div>
+</header>
+<main>
+<div class="container">
+  <section class="day-section">
+    <div class="day-header"><div class="day-num">DAY 1</div><div class="day-date">3月21日（土）</div><div class="day-rule"></div><div class="day-wx"><span class="dot" style="background:var(--amber)"></span>☀ 16° / 5°C</div></div>
+    <div class="timeline">
+      <div class="tl-row c-shop"><div class="tl-time">10:00<br>10:30</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">買い出し合流</div><div class="ev-shop-name">ヨークベニマル 日立大甕店</div><div class="ev-shop-addr">茨城県日立市大甕町4丁目14番14号　TEL 0294-25-4921</div></div></div></div>
+      <div class="tl-row c-move"><div class="tl-time">10:30<br>11:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">キャンプ場へ移動</div><div class="ev-note">日立中央IC → きらら の里（約10分）</div></div></div></div>
+      <div class="tl-row c-cin"><div class="tl-time">11:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">チェックイン</div><div class="ev-note">奥日立きらら の里　オートキャンプ場</div></div></div></div>
+      <div class="tl-row c-setup"><div class="tl-time">11:00<br>13:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">テント設営・昼食準備</div></div></div></div>
+      <div class="tl-row c-setup"><div class="tl-time">13:00<br>14:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">昼食</div></div></div></div>
+      <div class="tl-row c-act"><div class="tl-time">14:00<br>17:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">アクティビティ</div><div class="ev-note">わくわくスライダー（1,188m）・ふれあい牧場など</div></div></div></div>
+      <div class="tl-row c-bbq"><div class="tl-time">17:00<br>18:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">焚き火・BBQ 準備</div></div></div></div>
+      <div class="tl-row c-bbq"><div class="tl-time">18:00<br>20:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">夕食（BBQ）・焚き火</div></div></div></div>
+      <div class="tl-row c-night"><div class="tl-time">21:00〜</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">星空観察 → 就寝</div><div class="ev-note">花粉シーズン注意。マスク持参を</div></div></div></div>
+    </div>
+  </section>
+  <section class="day-section">
+    <div class="day-header"><div class="day-num">DAY 2</div><div class="day-date">3月22日（日）</div><div class="day-rule"></div><div class="day-wx"><span class="dot" style="background:var(--blue)"></span>⛅ 15° / 5°C</div></div>
+    <div class="timeline">
+      <div class="tl-row c-morn"><div class="tl-time">7:00<br>8:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">起床・朝の散策</div></div></div></div>
+      <div class="tl-row c-setup"><div class="tl-time">8:00<br>9:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">朝食</div></div></div></div>
+      <div class="tl-row c-setup"><div class="tl-time">9:00<br>10:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">テント撤収・荷物まとめ</div></div></div></div>
+      <div class="tl-row c-cout"><div class="tl-time">10:00</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">チェックアウト</div><div class="ev-note">10:00 まで</div></div></div></div>
+      <div class="tl-row c-setup"><div class="tl-time">10:00<br>11:30</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">日立市内でランチ</div><div class="ev-note">海鮮 / 地元グルメ</div></div></div></div>
+      <div class="tl-row c-ret"><div class="tl-time">11:30〜</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div><div class="tl-card"><div class="ev-label">帰路へ</div><div class="ev-note">本川家 → 新浦安　／　井奥家 → 西荻窪</div></div></div></div>
+    </div>
+  </section>
+  <footer class="foot">
+    <div class="foot-grid">
+      <a class="site-link" href="https://kiraranosato.com/" target="_blank" rel="noopener"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>kiraranosato.com</a>
+      <span class="foot-chip">チェックイン 11:00</span>
+      <span class="foot-chip">チェックアウト 10:00</span>
+      <span class="foot-chip">入場料：大人 320円・子ども 100円</span>
+      <span class="foot-chip">スライダー：大人 530円・子ども 320円</span>
+      <span class="foot-chip">TEL 0294-24-2424</span>
+    </div>
+  </footer>
+</div>
+</main>
+</body>
+</html>
